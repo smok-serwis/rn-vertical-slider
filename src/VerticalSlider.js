@@ -123,13 +123,7 @@ export default class VerticalSlider extends Component<Props, State> {
     const sliderHeight = this._getSliderHeight(value);
     let ballPosition = sliderHeight;
     const ballHeight = ballIndicatorWidth ? ballIndicatorWidth : 48;
-    if (ballPosition + ballHeight >= height) {
-      ballPosition = height - ballHeight;
-    } else if (ballPosition - ballHeight <= 0) {
-      ballPosition = 0;
-    } else {
-      ballPosition = ballPosition - ballHeight / 2;
-    }
+    ballPosition = ballPosition - ballHeight / 2;
     Animated.parallel([
       Animated.timing(this.state.sliderHeight, {
         toValue: sliderHeight,
