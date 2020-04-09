@@ -200,12 +200,13 @@ export default class VerticalSlider extends Component<Props, State> {
                 height: ballIndicatorWidth ? ballIndicatorWidth : 48,
                 borderRadius: ballIndicatorWidth ? ballIndicatorWidth / 2 : 24,
                 bottom: this.state.ballHeight,
-                left: ballIndicatorPosition ? ballIndicatorPosition : -60,
+                left: ballIndicatorPosition ? ballIndicatorPosition : - (width / 2),
                 backgroundColor: ballIndicatorColor
                   ? ballIndicatorColor
                   : "#ECECEC"
               }
             ]}
+            pointerEvents = 'none'
           >
             <Text
               style={[
